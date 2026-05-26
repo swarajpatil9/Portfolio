@@ -35,15 +35,15 @@ This is a single-page application (SPA) that serves as a personal developer port
 
 ## Tech Stack
 
-| Technology | Version | Purpose |
-|---|---|---|
-| [React](https://react.dev) | 19.2.6 | UI library |
-| [TypeScript](https://www.typescriptlang.org) | 6.0 | Static typing |
-| [Vite](https://vitejs.dev) | 8.0 | Build tool and dev server |
-| [React Router](https://reactrouter.com) | 7.15.1 | Client-side routing |
-| [Zustand](https://zustand-demo.pmnd.rs) | 5.0.13 | Global state management |
-| [Tailwind CSS](https://tailwindcss.com) | 4.3 | Utility-first styling |
-| [OGL](https://github.com/oframe/ogl) | 1.0.11 | WebGL aurora background |
+| Technology                                   | Version | Purpose                   |
+| -------------------------------------------- | ------- | ------------------------- |
+| [React](https://react.dev)                   | 19.2.6  | UI library                |
+| [TypeScript](https://www.typescriptlang.org) | 6.0     | Static typing             |
+| [Vite](https://vitejs.dev)                   | 8.0     | Build tool and dev server |
+| [React Router](https://reactrouter.com)      | 7.15.1  | Client-side routing       |
+| [Zustand](https://zustand-demo.pmnd.rs)      | 5.0.13  | Global state management   |
+| [Tailwind CSS](https://tailwindcss.com)      | 4.3     | Utility-first styling     |
+| [OGL](https://github.com/oframe/ogl)         | 1.0.11  | WebGL aurora background   |
 
 ---
 
@@ -91,10 +91,10 @@ The app will be available at `http://localhost:5173`.
 
 Copy `.env.example` to `.env.local` and configure the following:
 
-| Variable | Description | Required |
-|---|---|---|
-| `VITE_API_BASE_URL` | Base URL of the REST API (no trailing slash) | No |
-| `VITE_API_KEY` | Static API key sent via `x-api-key` header | No |
+| Variable            | Description                                  | Required |
+| ------------------- | -------------------------------------------- | -------- |
+| `VITE_API_BASE_URL` | Base URL of the REST API (no trailing slash) | No       |
+| `VITE_API_KEY`      | Static API key sent via `x-api-key` header   | No       |
 
 > **Note:** If `VITE_API_BASE_URL` is left empty, the app runs in **localStorage-only mode** with no network requests. This is the default for local development.
 

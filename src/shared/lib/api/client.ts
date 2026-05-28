@@ -5,13 +5,15 @@ import { HttpError } from "./types";
  * Set VITE_API_BASE_URL in .env (or .env.local) before building.
  * When the variable is absent the client is in "offline / localStorage" mode.
  */
-const BASE_URL = (import.meta.env.VITE_API_BASE_URL as string) ?? "";
+const BASE_URL = ((import.meta.env.VITE_API_BASE_URL as string) ?? "")
+  .trim()
+  .replace(/\/+$/, "");
 
 /**
  * Static API key sent in every request via the `x-api-key` header.
  * Set VITE_API_KEY in your .env file.
  */
-const API_KEY = (import.meta.env.VITE_API_KEY as string) ?? "";
+const API_KEY = ((import.meta.env.VITE_API_KEY as string) ?? "").trim();
 
 // ── Header builder ────────────────────────────────────────────────────────────
 

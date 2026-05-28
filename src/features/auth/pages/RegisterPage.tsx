@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createEmptyUserProfile } from "../../../entities/user/model/createEmptyUserProfile";
+import { HttpError } from "../../../shared/lib/api/types";
 import { useAuthStore } from "../store/useAuthStore";
 import { validateRegisterFields } from "../model/validation";
 import AuthField from "../ui/AuthField";
@@ -48,8 +49,13 @@ function RegisterPage() {
     try {
       await registerUser(userData);
       navigate("/home");
-    } catch {
-      setErrors({ form: "Registration failed. Please try again." });
+    } catch (error) {
+      setErrors({
+        form:
+          error instanceof HttpError
+            ? error.message
+            : "Registration failed. Please try again.",
+      });
     }
   };
 

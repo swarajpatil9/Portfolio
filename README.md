@@ -91,12 +91,15 @@ The app will be available at `http://localhost:5173`.
 
 Copy `.env.example` to `.env.local` and configure the following:
 
-| Variable            | Description                                  | Required |
-| ------------------- | -------------------------------------------- | -------- |
-| `VITE_API_BASE_URL` | Base URL of the REST API (no trailing slash) | No       |
-| `VITE_API_KEY`      | Static API key sent via `x-api-key` header   | No       |
+| Variable                     | Description                                  | Required |
+| ---------------------------- | -------------------------------------------- | -------- |
+| `VITE_API_BASE_URL`          | Base URL of the REST API (no trailing slash) | No       |
+| `VITE_API_KEY`               | Static API key sent via `x-api-key` header   | No       |
+| `VITE_CLERK_PUBLISHABLE_KEY` | Clerk publishable key for the frontend SDK   | No       |
 
 > **Note:** If `VITE_API_BASE_URL` is left empty, the app runs in **localStorage-only mode** with no network requests. This is the default for local development.
+
+> **Clerk:** If `VITE_CLERK_PUBLISHABLE_KEY` is set, the app boots inside Clerk's `ClerkProvider` and Clerk UI/hooks are available. If it is omitted, the app keeps using the current local auth flow.
 
 > **Security:** Never commit `.env.local` to source control. It is already listed in `.gitignore`.
 
